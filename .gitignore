@@ -1,0 +1,5 @@
+.vscode
+.env
+tasks.md
+client/node_modules
+client/dist
