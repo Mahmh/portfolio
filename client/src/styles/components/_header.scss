@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    background-color: get-color('background');
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: get-color('accent');
+        letter-spacing: 0.5px;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+
+        a {
+            position: relative;
+            color: get-color('secondary');
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                height: 2px;
+                width: 0%;
+                background-color: get-color('accent');
+                transition: width 0.25s ease-in-out;
+            }
+
+            &:hover {
+                color: get-color('text');
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                color: get-color('accent');
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
