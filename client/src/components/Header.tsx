@@ -1,3 +1,4 @@
+import '@styles/components/Header.scss'
 import { NavLink } from 'react-router-dom'
 
 export default function Header() {

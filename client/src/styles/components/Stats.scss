@@ -1,0 +1,31 @@
+#stats {
+    background-color: get-color('secondary-background');
+    padding: 4rem 2rem;
+    color: get-color('text');
+    border-top: 1px solid get-color('alpha-black');
+
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .stat {
+        text-align: center;
+
+        .value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: get-color('accent');
+            margin-bottom: 0.5rem;
+        }
+
+        .label {
+            font-size: 1rem;
+            color: get-color('secondary');
+        }
+    }
+}

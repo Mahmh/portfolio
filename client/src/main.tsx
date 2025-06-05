@@ -1,4 +1,4 @@
-import './styles/main.css'
+import '@styles/routes/main.scss'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header'
