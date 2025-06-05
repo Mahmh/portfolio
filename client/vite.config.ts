@@ -8,7 +8,8 @@ export default defineConfig({
         alias: {
             '@styles': path.resolve(__dirname, 'src/styles'),
             '@const': path.resolve(__dirname, 'src/constants'),
-            '@img': path.resolve(__dirname, '../public/img')
+            '@certs': path.resolve(__dirname, 'src/certificates'),
+            '@img': path.resolve(__dirname, '../public/img'),
         }
     },
     css: {
