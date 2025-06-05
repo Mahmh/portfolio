@@ -1,26 +1,33 @@
 import '@styles/routes/main.scss'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Header from './components/Header'
-import Banner from './components/Banner'
-import Stats from './components/Stats'
-import Skills from './components/Skills'
-import FeaturedProjects from './components/FeaturedProjects'
-import Services from './components/Services'
 import Footer from './components/Footer'
+import LandingPage from './routes/LandingPage'
+import Projects from './routes/Projects'
+import Certificates from './routes/Certificates'
+import Resume from './routes/Resume'
+import Contact from './routes/Contact'
 
-const LandingPage = () => <>
+const Layout = () => <>
     <Header/>
-    <Banner/>
-    <Stats/>
-    <FeaturedProjects/>
-    <Services/>
-    <Skills/>
+    <main>
+        <Outlet/>
+    </main>
     <Footer/>
 </>
 
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
-        <LandingPage/>
+        <Routes>
+            <Route path='/' element={<Layout/>}>
+                <Route index element={<LandingPage/>}/>
+                <Route path='projects' element={<Projects/>}/>
+                <Route path='certificates' element={<Certificates/>}/>
+                <Route path='resume' element={<Resume/>}/>
+                <Route path='contact' element={<Contact/>}/>
+            </Route>
+        </Routes>
     </BrowserRouter>
 )

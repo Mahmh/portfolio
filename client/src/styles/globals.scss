@@ -8,7 +8,8 @@ $colors: (
     'danger': #FF6B6B,
     'gold-accent': #C29D5C,
     'prestige-purple': #501C77,
-    'alpha-black': rgba(255, 255, 255, 0.06)
+    'alpha-black': rgba(255, 255, 255, 0.06),
+    'translucent-white': rgba(255, 255, 255, 0.15)
 );
 
 @function get-color($color) {
@@ -31,8 +32,17 @@ $colors: (
     font-style: italic;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Inter;
     font-size: 1.2rem;
     margin: 0;
+}
+
+section {
+    padding: 6rem 2rem;
+    padding-top: 3rem;
 }

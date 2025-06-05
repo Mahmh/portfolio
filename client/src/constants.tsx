@@ -1,6 +1,7 @@
 import AIEcomApp from '@img/projects/ai-ecom-app.png'
 import SemanticCourseSearch from '@img/projects/semantic-course-search.png'
-import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siNginx, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
+import Shiftiatrics from '@img/projects/shiftiatrics.webp'
+import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
 
 export const STATS = [
     { label: 'Years of Experience', value: '5+' },
@@ -9,6 +10,13 @@ export const STATS = [
 ]
 
 export const PROJECTS = [
+    {
+        title: 'Shiftiatrics',
+        description: 'A smart shift scheduling engine for healthcare ERs, built as a B2B service for hospitals. Handles staggered rotations, fairness, and holidays.',
+        stack: ['Next.js', 'FastAPI', 'Java', 'PostgreSQL'],
+        link: 'https://shiftiatrics.com/',
+        img: Shiftiatrics
+    },
     {
         title: 'AI-Personalized E-Commerce',
         description: 'An intelligent storefront that recommends products in real-time and includes a built-in AI shopping assistant powered by a language model.',
@@ -22,13 +30,6 @@ export const PROJECTS = [
         stack: ['Vite', 'FastAPI', 'SQLite', 'ChromaDB'],
         link: '/projects/semantic-search',
         img: SemanticCourseSearch
-    },
-    {
-        title: 'Resume Screener',
-        description: 'Instantly matches resumes to job descriptions using AI-powered similarity analysis.',
-        stack: ['Vite', 'FastAPI', 'Pandas'],
-        link: '/projects/resume-matcher',
-        img: undefined
     }
 ]
 

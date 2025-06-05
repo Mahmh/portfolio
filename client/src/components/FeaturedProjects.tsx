@@ -7,8 +7,14 @@ export default function FeaturedProjects() {
             <h2 className='section-title'>Featured Projects</h2>
             <div className='project-grid'>
                 {PROJECTS.map(project => (
-                    <a href={project.link} key={project.title} className='project-card'>
-                        <img src={project.img} alt={project.title} className='project-image'/>
+                    <a
+                        href={project.link}
+                        key={project.title}
+                        className='project-card'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <img src={project.img} alt={project.title} className='project-image' />
                         <div className='project-content'>
                             <h3 className='project-title'>{project.title}</h3>
                             <p className='project-description'>{project.description}</p>

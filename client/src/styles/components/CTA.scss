@@ -1,0 +1,43 @@
+#cta-section {
+    background: linear-gradient(135deg, get-color('accent'), mix(get-color('accent'), get-color('prestige-purple'), 15%));
+    color: get-color('background');
+    padding: 4rem 2rem;
+    padding-bottom: 6.5rem;
+    text-align: center;
+
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: get-color('text');
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: get-color('text');
+        }
+
+        .cta-button {
+            background-color: get-color('translucent-white');
+            color: get-color('text');
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+                border-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+}

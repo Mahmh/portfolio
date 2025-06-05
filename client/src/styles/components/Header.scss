@@ -64,20 +64,40 @@
     }
 
     .cta-button {
+        position: relative;
+        overflow: hidden;
         padding: 0.5rem 1.25rem;
         font-weight: 600;
-        color: #FFFFFF;
-        background-color: #1A1A1A;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: get-color('text');
+        border: none;
+        backdrop-filter: blur(6px);
+        background: linear-gradient(
+            270deg,
+            get-color('accent'),
+            get-color('accent-hover'),
+            get-color('prestige-purple'),
+            get-color('accent-hover'),
+            get-color('accent'),
+            get-color('accent-hover'),
+            get-color('prestige-purple'),
+            get-color('accent-hover'),
+            get-color('accent-hover')
+        );
+        background-size: 600% 100%;
+        background-position: 100% 50%;
         border-radius: 0.375rem;
         text-decoration: none;
-        transition: all 0.2s ease;
+        animation: gradientScroll 8s linear infinite;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        @keyframes gradientScroll {
+            0% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
 
         &:hover {
-            background-color: #2A2A2A;
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
 
         &:active {

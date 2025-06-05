@@ -4,7 +4,7 @@ import { SKILLS } from '@const'
 export default function Skills() {
     return (
         <section id='skills'>
-            <h2 className='section-title'>Skills</h2>
+            <h2 className='section-title'>Skills & Tools</h2>
             <div className='skill-grid'>
                 {Object.entries(SKILLS).map(([category, tools]) => (
                     <div className='skill-category' key={category}>

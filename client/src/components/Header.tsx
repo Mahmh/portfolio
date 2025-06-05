@@ -1,12 +1,10 @@
 import '@styles/components/Header.scss'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
     return (
         <header id='header'>
-            <NavLink to='/' className='logo'>
-                Maher Mahmoud
-            </NavLink>
+            <NavLink to='/' className='logo'>Maher Mahmoud</NavLink>
 
             <nav className='nav-links'>
                 <NavLink to='/projects' className={({ isActive }) => isActive ? 'active' : ''}>Projects</NavLink>
@@ -16,7 +14,7 @@ export default function Header() {
                 <NavLink to='/contact' className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
             </nav>
 
-            <a href='#contact' className='cta-button'>Book a Call</a>
+            <Link to='/contact' className='cta-button'>Book a Call</Link>
         </header>
     )
 }
