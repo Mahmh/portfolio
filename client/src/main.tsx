@@ -13,9 +13,9 @@ const LandingPage = () => <>
     <Header/>
     <Banner/>
     <Stats/>
-    <Skills/>
     <FeaturedProjects/>
     <Services/>
+    <Skills/>
     <Footer/>
 </>
 
