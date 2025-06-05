@@ -1,5 +1,6 @@
 import AIEcomApp from '@img/projects/ai-ecom-app.png'
 import SemanticCourseSearch from '@img/projects/semantic-course-search.png'
+import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siNginx, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact } from 'simple-icons'
 
 export const STATS = [
     { label: 'Years of Experience', value: '5+' },
@@ -49,3 +50,38 @@ export const SERVICES = [
         description: 'I help pick the right stack and design scalable systems that won’t break later.'
     }
 ]
+
+export const SKILLS = {
+    'Frontend': [
+        { name: 'TypeScript', icon: siTypescript },
+        { name: 'SCSS', icon: siSass },
+        { name: 'React', icon: siReact },
+        { name: 'Next.js', icon: siNextdotjs },
+        { name: 'Vite', icon: siVite },
+        { name: 'Preact Signals', icon: siPreact }
+    ],
+    'Backend': [
+        { name: 'Python', icon: siPython },
+        { name: 'Java (OpenJDK)', icon: siOpenjdk },
+        { name: 'FastAPI', icon: siFastapi },
+        { name: 'SQLite', icon: siSqlite },
+        { name: 'MySQL', icon: siMysql },
+        { name: 'PostgreSQL', icon: siPostgresql }
+    ],
+    'AI/ML': [
+        { name: 'PyTorch', icon: siPytorch },
+        { name: 'TensorFlow', icon: siTensorflow },
+        { name: 'Pandas', icon: siPandas },
+        { name: 'Plotly', icon: siPlotly },
+        { name: 'scikit-learn', icon: siScikitlearn },
+        { name: 'Hugging Face', icon: siHuggingface }
+    ],
+    'Tools & DevOps': [
+        { name: 'Linux', icon: siLinux },
+        { name: 'Bash Terminal', icon: siGnubash },
+        { name: 'Docker', icon: siDocker },
+        { name: 'Git', icon: siGit },
+        { name: 'GitHub Actions', icon: siGithubactions },
+        { name: 'Nginx', icon: siNginx }
+    ]
+}
