@@ -1,6 +1,6 @@
 import AIEcomApp from '@img/projects/ai-ecom-app.png'
 import SemanticCourseSearch from '@img/projects/semantic-course-search.png'
-import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siNginx, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact } from 'simple-icons'
+import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siNginx, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
 
 export const STATS = [
     { label: 'Years of Experience', value: '5+' },
@@ -82,6 +82,6 @@ export const SKILLS = {
         { name: 'Docker', icon: siDocker },
         { name: 'Git', icon: siGit },
         { name: 'GitHub Actions', icon: siGithubactions },
-        { name: 'Nginx', icon: siNginx }
+        { name: 'Hostinger', icon: siHostinger }
     ]
 }

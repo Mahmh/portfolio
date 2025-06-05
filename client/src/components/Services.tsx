@@ -3,7 +3,7 @@ import { SERVICES } from '@const'
 
 export default function Services() {
     return (
-        <section className='services'>
+        <section id='services'>
             <h2 className='section-title'>Services</h2>
             <div className='service-list'>
                 {SERVICES.map(service => (
