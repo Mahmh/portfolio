@@ -1,7 +1,7 @@
-header {
+#header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 1.25rem 2rem;
     background-color: get-color('background');
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -11,15 +11,23 @@ header {
 
     .logo {
         font-size: 1.5rem;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
-        color: get-color('accent');
-        letter-spacing: 0.5px;
+
+        background: linear-gradient(90deg, get-color('accent'), get-color('prestige-purple'));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        // Fallback for non-webkit browsers
+        background-clip: text;
+        color: transparent;
     }
 
-    nav {
+    .nav-links {
         display: flex;
         gap: 2rem;
+        justify-content: center;
+        flex: 1;
 
         a {
             position: relative;
@@ -27,6 +35,14 @@ header {
             font-weight: 500;
             text-decoration: none;
             transition: color 0.2s ease-in-out;
+
+            &.active {
+                color: get-color('accent');
+            }
+
+            &:hover {
+                color: get-color('text');
+            }
 
             &::after {
                 content: '';
@@ -40,21 +56,33 @@ header {
                 transition: width 0.25s ease-in-out;
             }
 
-            &:hover {
-                color: get-color('text');
-
-                &::after {
-                    width: 100%;
-                }
+            &.active::after,
+            &:hover::after {
+                width: 100%;
             }
+        }
+    }
 
-            &.active {
-                color: get-color('accent');
+    .cta-button {
+        padding: 0.5rem 1.25rem;
+        font-weight: 600;
+        color: #FFFFFF;
+        background-color: #1A1A1A;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.375rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
 
-                &::after {
-                    width: 100%;
-                }
-            }
+        &:hover {
+            background-color: #2A2A2A;
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: none;
         }
     }
 }
