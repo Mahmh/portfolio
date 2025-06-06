@@ -3,4 +3,5 @@
 tasks.md
 client/node_modules
 client/dist
+server/logs
 **/__pycache__

@@ -1,4 +1,5 @@
 import '@styles/components/Footer.scss'
+import { CONTACT_EMAIL } from '@const'
 
 export default function Footer() {
     return (
@@ -8,6 +9,7 @@ export default function Footer() {
                 <p>&copy; {new Date().getFullYear()} Maximus. All rights reserved.</p>
                 <div className='footer-links'>
                     <a href='https://github.com/Mahmh' target='_blank' rel='noopener noreferrer'>GitHub</a>
+                    <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
                 </div>
             </div>
         </footer>

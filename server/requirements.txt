@@ -1,2 +1,5 @@
 fastapi
 uvicorn
+fastapi-mail
+slowapi
+pydantic

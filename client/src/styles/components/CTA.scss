@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 #cta-section {
-    background: linear-gradient(135deg, get-color('accent'), mix(get-color('accent'), get-color('prestige-purple'), 15%));
+    background: linear-gradient(135deg, get-color('accent'), color.mix(get-color('accent'), get-color('prestige-purple'), 15%));
     color: get-color('background');
     padding: 4rem 2rem;
     padding-bottom: 6.5rem;
