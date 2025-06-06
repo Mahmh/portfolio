@@ -7,10 +7,10 @@ export default function Header() {
             <NavLink to='/' className='logo'>Maher Mahmoud</NavLink>
 
             <nav className='nav-links'>
+                <NavLink to='/about' className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
+                <NavLink to='/certificates' className={({ isActive }) => isActive ? 'active' : ''}>Certificates</NavLink>
                 <NavLink to='/projects' className={({ isActive }) => isActive ? 'active' : ''}>Projects</NavLink>
                 <NavLink to='/blog' className={({ isActive }) => isActive ? 'active' : ''}>Blog</NavLink>
-                <NavLink to='/certificates' className={({ isActive }) => isActive ? 'active' : ''}>Certificates</NavLink>
-                <NavLink to='/resume' className={({ isActive }) => isActive ? 'active' : ''}>Resume</NavLink>
                 <NavLink to='/contact' className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
             </nav>
 

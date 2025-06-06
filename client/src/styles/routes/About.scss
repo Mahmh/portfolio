@@ -1,0 +1,45 @@
+#about {
+    background-color: get-color('background');
+    padding: 5rem 6rem;
+    padding-top: 2rem;
+    min-height: 80vh;
+
+    .section-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        color: get-color('accent');
+        margin-bottom: 3rem;
+    }
+
+    .about-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 1100px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        color: get-color('secondary');
+        font-size: 1.1rem;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+
+        p {
+            margin: 0;
+        }
+    }
+}

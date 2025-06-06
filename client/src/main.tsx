@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 import LandingPage from './routes/LandingPage'
 import Projects from './routes/Projects'
 import Certificates from './routes/Certificates'
-import Resume from './routes/Resume'
+import About from './routes/About'
 import Contact from './routes/Contact'
 
 const Layout = () => {
@@ -32,9 +32,9 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
             <Route path='/' element={<Layout />}>
                 <Route index element={<LandingPage />} />
+                <Route path='about' element={<About />} />
                 <Route path='projects' element={<Projects />} />
                 <Route path='certificates' element={<Certificates />} />
-                <Route path='resume' element={<Resume />} />
                 <Route path='contact' element={<Contact />} />
             </Route>
         </Routes>
