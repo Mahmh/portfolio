@@ -1,7 +1,8 @@
 from textwrap import dedent
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from lib.constants import MAIL_USERNAME, MAIL_PASSWORD, MAIL_FROM, MAIL_PORT, MAIL_SERVER, MAIL_TLS, MAIL_SSL
-from lib.utils import ContactForm, errlog
+from lib.utils import errlog
+from lib.models import ContactForm
 
 conf = ConnectionConfig(
     MAIL_USERNAME=MAIL_USERNAME,

@@ -1,11 +1,5 @@
-from pydantic import BaseModel, EmailStr
 import logging, os
 from lib.constants import ENABLE_LOGGING, LOG_DIR
-
-class ContactForm(BaseModel):
-    name: str
-    email: EmailStr
-    message: str
 
 def get_logger(name: str, filename: str, level: str = 'INFO') -> logging.Logger:
     """Get a logger with a specific name and file handler."""

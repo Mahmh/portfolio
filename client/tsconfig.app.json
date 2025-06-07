@@ -26,7 +26,8 @@
     "paths": {
       "@styles/*": ["src/styles/*"],
       "@const": ["src/constants"],
-      "@certs": ["src/certificates"]
+      "@certs": ["src/certificates"],
+      "@types": ["src/types"],
     }
   },
   "include": ["src"]

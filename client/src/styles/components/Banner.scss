@@ -1,6 +1,12 @@
+@use 'sass:color';
+
 #banner {
     padding: 5rem 2rem;
-    background-color: get-color('background');
+    background: linear-gradient(
+        135deg,
+        color.adjust(get-color('accent'), $lightness: -40%),
+        color.adjust(get-color('prestige-purple'), $lightness: -20%)
+    );
     color: get-color('text');
 
     .banner-content {

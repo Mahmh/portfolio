@@ -1,7 +1,7 @@
 import os
 
 _CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-_locate = lambda x: os.path.join(_CURRENT_DIR, x)
+_path_to = lambda x: os.path.join(_CURRENT_DIR, x)
 
 # Net
 BACKEND_SERVER_URL = os.getenv('BACKEND_SERVER_URL')
@@ -16,7 +16,8 @@ MAIL_SERVER = os.getenv('MAIL_SERVER')
 MAIL_TLS = os.getenv('MAIL_TLS')
 MAIL_SSL = os.getenv('MAIL_SSL')
 
-# Logging
+# Misc
+LOG_DIR = _path_to('../logs/')
+BLOG_DIR = _path_to('../blog/')
 ENABLE_LOGGING = bool(int(os.getenv('ENABLE_LOGGING', '0')))
-LOG_DIR = _locate('../logs/')
 os.makedirs(LOG_DIR, exist_ok=True)

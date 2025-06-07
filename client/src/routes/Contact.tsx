@@ -2,8 +2,9 @@ import '@styles/routes/Contact.scss'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
 import { CONTACT_EMAIL, BACKEND_SERVER_URL } from '@const'
+import type { ServerMsg } from '@types'
 
-const feedback = signal<{ message: string; success: boolean } | null>(null)
+const feedback = signal<ServerMsg | null>(null)
 const sending = signal(false)
 
 export default function Contact() {
@@ -24,21 +25,21 @@ export default function Contact() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
-            const result = await response.json()
+            const result: ServerMsg = await response.json()
         
             if (response.status === 429) {
                 feedback.value = {
-                    message: 'You have sent too many requests. Please try again later.',
+                    detail: 'You have sent too many requests. Please try again later.',
                     success: false
                 }
                 return
             }
 
             if (result.success) form.reset()
-            feedback.value = { message: result.detail, success: result.success }
+            feedback.value = result
         } catch {
             feedback.value = {
-                message: 'Network error occured. Please check your connection then try again.',
+                detail: 'Network error occured. Please check your connection then try again.',
                 success: false
             }
         } finally {
@@ -61,7 +62,7 @@ export default function Contact() {
 
                     {feedback.value && (
                         <div className={`form-feedback ${feedback.value.success ? 'success' : 'error'}`}>
-                            {feedback.value.message}
+                            {feedback.value.detail}
                         </div>
                     )}
                 </form>
