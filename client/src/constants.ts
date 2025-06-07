@@ -14,22 +14,29 @@ export const PROJECTS = [
         title: 'Shiftiatrics',
         description: 'A smart shift scheduling engine for healthcare ERs, built as a B2B service for hospitals. Handles staggered rotations, fairness, and holidays.',
         stack: ['Next.js', 'FastAPI', 'Java', 'PostgreSQL', 'SCSS', 'Docker', 'Hostinger VPS'],
-        link: 'https://shiftiatrics.com/',
-        img: '/img/projects/shiftiatrics.webp'
+        img: '/img/projects/shiftiatrics.webp',
+        url: 'https://shiftiatrics.com/'
     },
     {
         title: 'AI-Personalized E-Commerce',
         description: 'An intelligent storefront that recommends products in real-time and includes a built-in AI shopping assistant powered by a language model.',
         stack: ['Next.js', 'FastAPI', 'MySQL', 'SCSS', 'Docker', 'Ollama'],
-        link: '/projects/ai-ecom',
-        img: '/img/projects/ai-ecom-app.png'
+        img: '/img/projects/ai-ecom-app.png',
+        url: 'https://github.com/Mahmh/ai_ecom_app'
     },
     {
         title: 'Semantic Course Search',
         description: 'A smarter search engine for 100+ tech courses that understands meaning — not just keywords.',
         stack: ['Vite', 'FastAPI', 'SQLite', 'SCSS', 'Docker', 'ChromaDB'],
-        link: '/projects/semantic-search',
-        img: '/img/projects/semantic-course-search.png'
+        img: '/img/projects/semantic-course-search.png',
+        url: 'https://github.com/Mahmh/CourseSeek'
+    },
+    {
+        title: 'Custom DSA Toolkit using Java',
+        description: 'A personal Java project showcasing core CS fundamentals through custom-built data structures and algorithms. Includes arrays, trees, and graphs — all tested and written from scratch to reinforce deep algorithmic thinking.',
+        stack: ['Java', 'Algorithms', 'Gradle', 'JUnit Jupiter'],
+        img: '/img/projects/custom-dsa.png',
+        url: 'https://github.com/Mahmh/custom-dsa'
     }
 ]
 

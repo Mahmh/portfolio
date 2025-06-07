@@ -1,5 +1,11 @@
+@use 'sass:color';
+
 #about {
-    background-color: get-color('background');
+    background: linear-gradient(
+        135deg,
+        color.adjust(get-color('accent'), $lightness: -40%),
+        color.adjust(get-color('prestige-purple'), $lightness: -20%)
+    );
     padding: 5rem 6rem;
     padding-top: 2rem;
     min-height: 80vh;

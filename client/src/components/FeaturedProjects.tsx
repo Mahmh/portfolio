@@ -5,10 +5,10 @@ export default function FeaturedProjects() {
     return (
         <section id='featured-projects'>
             <h2 className='section-title'>Featured Projects</h2>
-            <div className='project-grid'>
-                {PROJECTS.map(project => (
+            <div className='projects-grid'>
+                {PROJECTS.slice(0, 3).map(project => (
                     <a
-                        href={project.link}
+                        href={project.url}
                         key={project.title}
                         className='project-card'
                         target='_blank'
