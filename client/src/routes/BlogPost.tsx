@@ -2,20 +2,27 @@ import '@styles/routes/BlogPost.scss'
 import 'highlight.js/styles/github-dark.css'
 import rehypeHighlight from 'rehype-highlight'
 import ReactMarkdown from 'react-markdown'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { useLayoutEffect, useEffect } from 'react'
+import { useSignals } from '@preact/signals-react/runtime'
+import { signal } from '@preact/signals-react'
 import type { BlogPost, ServerMsg } from '@types'
 import { BACKEND_SERVER_URL } from '@const'
 
+const post = signal<BlogPost | null>(null)
+const loading = signal(true)
+const error = signal<string | null>(null)
+
 export default function BlogPost() {
+    useSignals()
     const { slug } = useParams()
-    const [post, setPost] = useState<BlogPost | null>(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
         const fetchPost = async () => {
             try {
+                loading.value = true
+                error.value = null
+
                 const res = await fetch(`${BACKEND_SERVER_URL}/blog/${slug}`)
                 if (!res.ok) throw new Error('Failed to load post')
 
@@ -23,33 +30,43 @@ export default function BlogPost() {
                 if ('success' in data && !data.success) {
                     throw new Error(data.detail)
                 } else if ('title' in data) {
-                    setPost(data)
+                    post.value = data
                 }
             } catch (err) {
-                setError((err as Error).message)
+                error.value = (err as Error).message
             } finally {
-                setLoading(false)
+                loading.value = false
             }
         }
 
         if (slug) fetchPost()
     }, [slug])
 
-    if (loading) return (
+    useLayoutEffect(() => {
+        if (!post.value) return
+        const header = document.getElementById('header')
+        const img = document.getElementById('post-img')
+        if (header && img) {
+            const height = header.offsetHeight
+            img.style.top = `${height}px`
+        }
+    }, [post.value])
+
+    if (loading.value) return (
         <section id='blog-post' style={{ alignItems: 'flex-start' }}>
             <div className='loading'>
-                <span className='spinner' />
+                <span className='spinner'/>
                 <p>Loading article...</p>
             </div>
         </section>
     )
 
-    if (error || !post) return (
+    if (error.value || !post.value) return (
         <section id='blog-post' style={{ alignItems: 'flex-start' }}>
             <div className='not-found'>
                 <h2>Post Not Found</h2>
                 <p>Sorry, we couldn’t find that blog post. It either does not exist or this URL is incorrect.</p>
-                <a href='/blog' className='back-link'>← Back to Blog</a>
+                <Link to='/blog' className='back-link'>← Back to Blog</Link>
             </div>
         </section>
     )
@@ -57,15 +74,17 @@ export default function BlogPost() {
     return (
         <article id='blog-post'>
             <div id='post-container'>
-                <img src={post.img} alt={post.title} id='post-img'/>
+                <img src={post.value.img} alt={post.value.title} id='post-img'/>
                 <section id='title-and-date'>
-                    <h1>{post.title}</h1>
+                    <h1>{post.value.title}</h1>
                     <p>
-                        <em>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</em>
+                        <em>{new Date(post.value.date).toLocaleDateString('en-US', {
+                            year: 'numeric', month: 'long', day: 'numeric'
+                        })}</em>
                     </p>
                 </section>
                 <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-                    {post.content}
+                    {post.value.content}
                 </ReactMarkdown>
             </div>
         </article>

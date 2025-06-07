@@ -5,7 +5,30 @@
     border-top: 1px solid get-color('alpha-white');
     border-bottom: 1px solid get-color('alpha-white');
 
-    .project-card {
-        @extend %project-card;
+    @include breakpoint(968px) {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .projects-grid {
+        @include breakpoint(1480px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .project-card {
+                max-width: 40vw;
+            }
+        }
+
+        @include breakpoint(1080px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
+
+            .project-card {
+                max-width: 100vw;
+                margin: 0 1vw;
+            }
+        }
     }
 }

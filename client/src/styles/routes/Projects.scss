@@ -6,8 +6,9 @@
     padding-left: 10vw;
     padding-right: 10vw;
 
-    .project-card {
-        @extend %project-card;
+    @include breakpoint(550px) {
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
 }
 
@@ -29,10 +30,14 @@
         gap: 3rem;
         max-width: 1600px;
         margin: 0 auto;
+
+        @include breakpoint(550px) {
+            grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
+        }
     }
 }
 
-%project-card {
+.project-card {
     display: flex;
     flex-direction: column;
     background-color: #161616;

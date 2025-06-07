@@ -27,7 +27,7 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className='image' style={{ minWidth: 400, minHeight: 400, borderRadius: 20, background: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, color: '#888', fontWeight: 700 }}>
+                <div className='image' style={{ background: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, color: '#888', fontWeight: 700 }}>
                     MM
                 </div>
             </div>

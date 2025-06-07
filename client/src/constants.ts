@@ -1,7 +1,7 @@
 import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
 
 export const BACKEND_SERVER_URL = 'http://localhost:8000'
-export const CONTACT_EMAIL = 'maher@mahermahmoud.com'
+export const CONTACT_EMAIL = 'maher@mahermah.com'
 
 export const STATS = [
     { label: 'Years of Experience', value: '5+' },

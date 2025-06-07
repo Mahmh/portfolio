@@ -1,7 +1,7 @@
 @use 'sass:color';
 
 #banner {
-    padding: 5rem 2rem;
+    padding: 5rem 10vw;
     background: linear-gradient(
         135deg,
         color.adjust(get-color('accent'), $lightness: -40%),
@@ -20,13 +20,22 @@
 
         .text {
             flex: 1;
-            min-width: 300px;
+            min-width: 500px;
+
+            @include breakpoint(650px) {
+                min-width: 40vw;
+            }
 
             h1 {
                 font-size: 2.5rem;
                 font-weight: 700;
                 margin-bottom: 1rem;
                 text-align: left;
+
+                @include breakpoint(650px) {
+                    margin-top: 0;
+                    text-align: center;
+                }
             }
 
             p {
@@ -48,6 +57,11 @@
                 transition: all 0.2s ease;
                 backdrop-filter: blur(2px);
 
+                @include breakpoint(650px) {
+                    display: block;
+                    text-align: center;
+                }
+
                 &:hover {
                     background-color: #2A2A2A;
                     border-color: rgba(255, 255, 255, 0.3);
@@ -65,9 +79,14 @@
         .image {
             background-color: get-color('accent');
             flex: 1;
-            min-width: 250px;
+            min-width: 400px;
             display: flex;
             justify-content: center;
+            border-radius: 20px;
+
+            @include breakpoint(650px) {
+                min-width: 50vw;
+            }
 
             img {
                 width: 100%;

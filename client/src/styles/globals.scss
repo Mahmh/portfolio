@@ -18,6 +18,10 @@ $colors: (
     @return map.get($colors, $color);
 }
 
+@mixin breakpoint($max-width) {
+    @media (max-width: $max-width) { @content };
+}
+
 @font-face {
     font-family: Inter;
     src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');

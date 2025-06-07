@@ -1,3 +1,5 @@
+@use '@styles/routes/Blog.scss' as *;
+
 #blog-post {
     display: flex;
     justify-content: center;
@@ -12,19 +14,41 @@
         max-width: 70vw;
         margin: 0 auto;
 
+        @include breakpoint(620px) {
+            max-width: 80vw;
+        }
+
         #post-img {
+            display: block;
             width: 100%;
-            height: auto;
+            max-width: 40vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
             max-height: 500px;
             object-fit: cover;
             border-radius: 1rem;
-            margin-bottom: 2rem;
+
+            @include breakpoint(1240px) {
+                max-width: 80vw;
+            }
+
+            @include breakpoint(768px) {
+                max-width: 100%;
+                position: absolute;
+                border-radius: 0;
+                left: 0;
+            }
         }
     }
 
     #title-and-date {
         text-align: center;
         padding: 2rem;
+
+        @include breakpoint(768px) {
+            margin-top: 58vw;
+        }
     }
 
     h1 {
@@ -37,7 +61,6 @@
     em {
         font-size: 1rem;
         color: get-color('secondary');
-        display: block;
     }
 
     h2, h3, h4 {
@@ -135,38 +158,5 @@
         &:hover {
             background-color: rgba(255, 255, 255, 0.12);
         }
-    }
-}
-
-
-#blog-post .loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    width: 100%;
-    color: get-color('text');
-    text-align: center;
-
-    .spinner {
-        width: 2.5rem;
-        height: 2.5rem;
-        border: 3px solid rgba(255, 255, 255, 0.2);
-        border-top-color: get-color('accent');
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-        margin-bottom: 1.2rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-        color: get-color('secondary');
-    }
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
     }
 }

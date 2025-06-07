@@ -1,4 +1,3 @@
-import '@styles/routes/main.scss'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LandingPage from './routes/LandingPage'

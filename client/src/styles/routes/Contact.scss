@@ -9,6 +9,10 @@
         font-weight: 700;
         color: get-color('accent');
         margin-bottom: 3.5rem;
+
+        @include breakpoint(1000px) {
+            margin-top: 0;
+        }
     }
 
     .contact-wrapper {
@@ -59,6 +63,10 @@
             backdrop-filter: blur(2px);
             cursor: pointer;
 
+            @include breakpoint(650px) {
+                width: 100%;
+            }
+
             &:hover {
                 background-color: #2A2A2A;
                 border-color: rgba(255, 255, 255, 0.3);
@@ -94,6 +102,10 @@
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(4px);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        @include breakpoint(650px) {
+            min-width: 60vw;
+        }
 
         p {
             margin-top: 0;

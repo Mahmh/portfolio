@@ -4,7 +4,9 @@ import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
 import { BACKEND_SERVER_URL } from '@const'
 import type { BlogPost } from '@types'
+import { Link } from 'react-router-dom'
 
+const loading = signal(true)
 const search = signal('')
 const activeTags = signal<string[]>([])
 const posts = signal<BlogPost[]>([])
@@ -14,6 +16,7 @@ export default function Blog() {
 
     const fetchPosts = async () => {
         try {
+            loading.value = true
             const res = await fetch(`${BACKEND_SERVER_URL}/blog`)
 
             if (!res.ok) {
@@ -25,6 +28,8 @@ export default function Blog() {
             posts.value = data
         } catch (err) {
             console.error('[fetchPosts] Network error:', err)
+        } finally {
+            loading.value = false
         }
     }
 
@@ -73,17 +78,22 @@ export default function Blog() {
             </div>
 
             <div className='blog-grid'>
-                {filtered.length === 0 ? (
+                {loading.value ? (
+                    <div className='loading'>
+                        <span className='spinner' />
+                        <p>Loading posts...</p>
+                    </div>
+                ) : filtered.length === 0 ? (
                     <div className='no-results'>No posts match your search or selected tags.</div>
                 ) : (
                     filtered.map((post, i) => (
-                        <a key={i} href={`/blog/${post.slug}`} className='blog-post'>
+                        <Link key={i} to={`/blog/${post.slug}`} className='blog-post'>
                             <img src={post.img} alt={post.title} className='post-img'/>
                             <div className='post-content'>
                                 <h3 className='post-title'>{post.title}</h3>
                                 <p className='post-excerpt'>{post.excerpt}</p>
                             </div>
-                        </a>
+                        </Link>
                     ))
                 )}
             </div>
