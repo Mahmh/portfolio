@@ -1,6 +1,6 @@
 import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
 
-export const BACKEND_SERVER_URL = 'http://localhost:8000'
+export const BACKEND_SERVER_URL = 'http://localhost/api'
 export const CONTACT_EMAIL = 'maher@mahermah.com'
 
 export const STATS = [
@@ -15,7 +15,7 @@ export const PROJECTS = [
         description: 'A smart shift scheduling engine for healthcare ERs, built as a B2B service for hospitals. Handles staggered rotations, fairness, and holidays.',
         stack: ['Next.js', 'FastAPI', 'Java', 'PostgreSQL', 'SCSS', 'Docker', 'Hostinger VPS'],
         img: '/img/projects/shiftiatrics.webp',
-        url: 'https://shiftiatrics.com/'
+        url: 'https://github.com/Mahmh/shiftiatrics'
     },
     {
         title: 'AI-Personalized E-Commerce',

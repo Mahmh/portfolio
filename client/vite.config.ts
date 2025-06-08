@@ -18,5 +18,8 @@ export default defineConfig({
                 additionalData: `@use "@styles/globals.scss" as *;`
             }
         }
+    },
+    server: {
+        allowedHosts: ['mahermah.com']
     }
 })
