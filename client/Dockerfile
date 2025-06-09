@@ -1,8 +1,13 @@
 # Step 1: Build
 FROM node:20 AS builder
 
+# Accept build-time environment variable from docker-compose
+ARG VITE_BACKEND_SERVER_URL
+ENV VITE_BACKEND_SERVER_URL=$VITE_BACKEND_SERVER_URL
+
 WORKDIR /app
 COPY . .
+
 RUN npm install
 RUN npm run build
 
@@ -10,11 +15,9 @@ RUN npm run build
 FROM node:20-alpine AS runner
 
 WORKDIR /app
-
-# Install minimal static server
 RUN npm install -g serve
 
-# Copy built frontend from builder
+# Copy build artifacts
 COPY --from=builder /app/dist ./dist
 
 EXPOSE 80

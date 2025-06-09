@@ -7,7 +7,7 @@ import { useLayoutEffect, useEffect } from 'react'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
 import type { BlogPost, ServerMsg } from '@types'
-import { BACKEND_SERVER_URL } from '@const'
+import { VITE_BACKEND_SERVER_URL } from '@const'
 
 const post = signal<BlogPost | null>(null)
 const loading = signal(true)
@@ -23,7 +23,7 @@ export default function BlogPost() {
                 loading.value = true
                 error.value = null
 
-                const res = await fetch(`${BACKEND_SERVER_URL}/blog/${slug}`)
+                const res = await fetch(`${VITE_BACKEND_SERVER_URL}/blog/${slug}`)
                 if (!res.ok) throw new Error('Failed to load post')
 
                 const data: BlogPost | ServerMsg = await res.json()

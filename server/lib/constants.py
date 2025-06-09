@@ -4,7 +4,7 @@ _CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 _path_to = lambda x: os.path.join(_CURRENT_DIR, x)
 
 # Net
-BACKEND_SERVER_URL = os.getenv('BACKEND_SERVER_URL')
+VITE_BACKEND_SERVER_URL = os.getenv('VITE_BACKEND_SERVER_URL')
 WEB_SERVER_URL = os.getenv('WEB_SERVER_URL')
 
 # Emails

@@ -14,9 +14,13 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_SERVER_URL: ${VITE_BACKEND_SERVER_URL}
     container_name: client_c
     ports:
       - "5173:5173"
+    env_file:
+      - ./.env
     depends_on:
       - server
     restart: always
