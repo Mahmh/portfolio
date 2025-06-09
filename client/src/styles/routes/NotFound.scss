@@ -1,0 +1,47 @@
+#not-found {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: get-color('background');
+    color: get-color('text');
+    padding: 2rem;
+
+    .container {
+        text-align: center;
+        max-width: 600px;
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            color: get-color('accent');
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: get-color('secondary');
+            margin-bottom: 2rem;
+        }
+
+        .back-home {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            color: get-color('text');
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid get-color('alpha-white');
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+    }
+}
