@@ -1,7 +1,8 @@
 import '@styles/routes/About.scss'
 
 export default function About() {
-    return (
+    return <>
+        <title>About | Maher Mahmoud</title>
         <section id='about'>
             <h2 className='section-title'>About Me</h2>
             <div className='about-wrapper'>
@@ -32,5 +33,5 @@ export default function About() {
                 </div>
             </div>
         </section>
-    )
+    </>
 }

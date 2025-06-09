@@ -44,6 +44,7 @@ export default function BlogPost() {
 
     useLayoutEffect(() => {
         if (!post.value) return
+        document.title = `${post.value.title} | Maher Mahmoud` 
         const header = document.getElementById('header')
         const img = document.getElementById('post-img')
         if (header && img) {
@@ -61,7 +62,8 @@ export default function BlogPost() {
         </section>
     )
 
-    if (error.value || !post.value) return (
+    if (error.value || !post.value) return <>
+        <title>Post Not Found | Maher Mahmoud</title>
         <section id='blog-post' style={{ alignItems: 'flex-start' }}>
             <div className='not-found'>
                 <h2>Post Not Found</h2>
@@ -69,7 +71,7 @@ export default function BlogPost() {
                 <Link to='/blog' className='back-link'>← Back to Blog</Link>
             </div>
         </section>
-    )
+    </>
 
     return (
         <article id='blog-post'>

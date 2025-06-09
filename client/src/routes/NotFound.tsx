@@ -2,7 +2,8 @@ import '@styles/routes/NotFound.scss'
 import { Link } from 'react-router-dom'
 
 export default function NotFound() {
-    return (
+    return <>
+        <title>Page Not Found | Maher Mahmoud</title>
         <section id='not-found'>
             <div className='container'>
                 <h1>404</h1>
@@ -11,5 +12,5 @@ export default function NotFound() {
                 <Link to='/' className='back-home'>← Back to Home</Link>
             </div>
         </section>
-    )
+    </>
 }

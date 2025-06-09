@@ -53,7 +53,8 @@ export default function Blog() {
         fetchPosts()
     }, [])
 
-    return (
+    return <>
+        <title>Blog | Maher Mahmoud</title>
         <section id='blog'>
             <div className='blog-banner'>
                 <h2>My Blog Articles</h2>
@@ -98,5 +99,5 @@ export default function Blog() {
                 )}
             </div>
         </section>
-    )
+    </>
 }

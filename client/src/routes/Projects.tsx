@@ -2,7 +2,8 @@ import '@styles/routes/Projects.scss'
 import { PROJECTS } from '@const'
 
 export default function Projects() {
-    return (
+    return <>
+        <title>Projects | Maher Mahmoud</title>
         <section id='projects'>
             <h2 className='section-title'>Public Projects</h2>
             <div className='projects-grid'>
@@ -28,5 +29,5 @@ export default function Projects() {
                 ))}
             </div>
         </section>
-    )
+    </>
 }

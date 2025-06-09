@@ -47,7 +47,8 @@ export default function Contact() {
         }
     }
 
-    return (
+    return <>
+        <title>Contact | Maher Mahmoud</title>
         <section id='contact'>
             <h2 className='section-title'>Contact</h2>
 
@@ -76,5 +77,5 @@ export default function Contact() {
                 </div>
             </div>
         </section>
-    )
+    </>
 }

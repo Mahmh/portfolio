@@ -25,7 +25,8 @@ const getUniqueCategories = () => Array.from(new Set(CERTIFICATES.map(cert => ce
 
 /** Components */
 export default function Certificates() {
-    return (
+    return <>
+        <title>Certificates | Maher Mahmoud</title>
         <section id='certificates'>
             <h2 className='section-title'>My Certificates</h2>
             <div className='cert-wrapper'>
@@ -33,7 +34,7 @@ export default function Certificates() {
                 <CertGrid/>
             </div>
         </section>
-    )
+    </>
 }
 
 
