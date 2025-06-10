@@ -76,10 +76,12 @@
             }
         }
 
-        .image {
+        .profile-img {
             background-color: get-color('accent');
             flex: 1;
             min-width: 400px;
+            max-height: 500px;
+            object-fit: cover;
             display: flex;
             justify-content: center;
             border-radius: 20px;

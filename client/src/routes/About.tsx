@@ -28,9 +28,7 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className='image' style={{ background: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, color: '#888', fontWeight: 700 }}>
-                    MM
-                </div>
+                <img className='profile-img' alt='My Profile Pictures' src='/img/profile.jpg'/>
             </div>
         </section>
     </>

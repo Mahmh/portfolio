@@ -7,6 +7,7 @@ import CTA from '../components/CTA'
 
 export default function LandingPage() {
     return <>
+        <title>Maher Mahmoud</title>
         <Banner/>
         <Stats/>
         <FeaturedProjects/>

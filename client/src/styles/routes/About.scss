@@ -51,8 +51,10 @@
         }
     }
 
-    .image {
+    .profile-img {
         border-radius: 20px;
+        max-height: 500px;
+        object-fit: cover;
         min-width: 400px;
         min-height: 400px;
 

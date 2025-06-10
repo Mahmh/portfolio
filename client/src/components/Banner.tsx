@@ -12,9 +12,7 @@ export default function Banner() {
                     </p>
                     <a href='#featured-projects' className='cta-button'>See My Projects</a>
                 </div>
-                <div className='image' style={{ width: 100, height: 400, background: '#e0e0e0', alignItems: 'center', fontSize: 32, color: '#888', fontWeight: 700 }}>
-                    MM
-                </div>
+                <img className='profile-img' alt='My Profile Pictures' src='/img/profile.jpg'/>
             </div>
         </section>
     )
