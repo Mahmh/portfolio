@@ -32,11 +32,25 @@ export const PROJECTS = [
         url: 'https://github.com/Mahmh/CourseSeek'
     },
     {
+        title: 'AI-Powered Resume Screener',
+        description: 'An AI-powered tool that matches candidates to jobs by evaluating their resumes against specific job requirements. It includes the job relevance score and AI analysis.',
+        stack: ['Vite', 'FastAPI', 'Ollama', 'Hugging Face', 'Docker'],
+        img: '/img/projects/resume-screener.png',
+        url: 'https://github.com/Mahmh/resume-screener'
+    },
+    {
         title: 'Custom DSA Toolkit using Java',
         description: 'A personal Java project showcasing core CS fundamentals through custom-built data structures and algorithms. Includes arrays, trees, and graphs — all tested and written from scratch to reinforce deep algorithmic thinking.',
         stack: ['Java', 'Algorithms', 'Gradle', 'JUnit Jupiter'],
         img: '/img/projects/custom-dsa.png',
         url: 'https://github.com/Mahmh/custom-dsa'
+    },
+    {
+        title: 'Custom ML Toolkit using Python',
+        description: 'A personal Python project for implementing some popular machine learning & deep learning algorithms (e.g., linear regression) from scratch.',
+        stack: ['Python', 'AI/ML', 'NumPy', 'Pandas', 'Matplotlib'],
+        img: '/img/projects/custom-ml.png',
+        url: 'https://github.com/Mahmh/custom-machine-learning'
     }
 ]
 
