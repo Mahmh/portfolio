@@ -37,6 +37,23 @@ $colors: (
     font-style: italic;
 }
 
+@font-face {
+    font-family: CMU;
+    src: url('/fonts/cmunrm.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CMU;
+    src: url('/fonts/cmunti.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+}
+
+
 * {
     font-family: Inter;
 }

@@ -2,12 +2,16 @@ import '@styles/routes/BlogPost.scss'
 import 'highlight.js/styles/github-dark.css'
 import rehypeHighlight from 'rehype-highlight'
 import ReactMarkdown from 'react-markdown'
+import rehypeKatex from 'rehype-katex'
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
 import { Link, useParams } from 'react-router-dom'
 import { useLayoutEffect, useEffect } from 'react'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
-import type { BlogPost, ServerMsg } from '@types'
 import { VITE_BACKEND_SERVER_URL } from '@const'
+import type { BlogPost, ServerMsg } from '@types'
+import 'katex/dist/katex.min.css'
 
 const post = signal<BlogPost | null>(null)
 const loading = signal(true)
@@ -74,9 +78,9 @@ export default function BlogPost() {
     </>
 
     return (
-        <article id='blog-post'>
-            <div id='post-container'>
-                <img src={post.value.img} alt={post.value.title} id='post-img'/>
+        <div id='blog-post'>
+            <img src={post.value.img} alt={post.value.title} id='post-img'/>
+            <article id='post-container'>
                 <section id='title-and-date'>
                     <h1>{post.value.title}</h1>
                     <p>
@@ -85,10 +89,16 @@ export default function BlogPost() {
                         })}</em>
                     </p>
                 </section>
-                <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
+                    rehypePlugins={[rehypeHighlight, rehypeKatex]}
+                    components={{
+                        a: ({node, ...props}) => <a {...props} target='_blank' rel='noopener noreferrer'/>         
+                    }}
+                >
                     {post.value.content}
                 </ReactMarkdown>
-            </div>
-        </article>
+            </article>
+        </div>
     )
 }

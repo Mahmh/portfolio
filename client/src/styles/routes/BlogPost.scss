@@ -1,7 +1,9 @@
 @use '@styles/routes/Blog.scss' as *;
+@use 'sass:color';
 
 #blog-post {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, get-color('background'), get-color('secondary-background'));
@@ -10,45 +12,45 @@
     padding: 6rem 2rem;
     padding-top: 3rem;
 
-    #post-container {
-        max-width: 70vw;
-        margin: 0 auto;
+    @include breakpoint(768px) {
+        padding: 0;
+        padding-bottom: 6rem;
+    }
 
-        @include breakpoint(620px) {
+    #post-img {
+        display: block;
+        width: 100%;
+        max-width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+        max-height: 700px;
+        object-fit: cover;
+        border-radius: 1rem;
+
+        @include breakpoint(1240px) {
             max-width: 80vw;
         }
 
-        #post-img {
-            display: block;
-            width: 100%;
-            max-width: 40vw;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 1rem;
+        @include breakpoint(768px) {
+            max-width: 100%;
+            border-radius: 0;
+            left: 0;
+        }
+    }
 
-            @include breakpoint(1240px) {
-                max-width: 80vw;
-            }
+    #post-container {
+        max-width: 60vw;
+        margin: 0 auto;
 
-            @include breakpoint(768px) {
-                max-width: 100%;
-                position: absolute;
-                border-radius: 0;
-                left: 0;
-            }
+        @include breakpoint(1400px) {
+            max-width: 80vw;
         }
     }
 
     #title-and-date {
         text-align: center;
         padding: 2rem;
-
-        @include breakpoint(768px) {
-            margin-top: 58vw;
-        }
     }
 
     h1 {
@@ -125,6 +127,52 @@
         &:hover {
             text-decoration: none;
         }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        font-size: 0.95rem;
+        background: none;
+
+        // Make the table horizontally scrollable on small screens
+        @media (max-width: 600px) {
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        th, td {
+            padding: 0.75em 1em;
+            text-align: left;
+            border-bottom: 1px solid get-color('text');
+        }
+
+        thead {
+            background-color: color.adjust(get-color('accent'), $lightness: -30%);
+            th { font-weight: 600 }
+        }
+
+        tbody tr {
+            transition: 100ms background-color ease;
+
+            &:hover {
+                background-color: color.adjust(get-color('background'), $lightness: -3%);
+            }
+
+            &:last-child td {
+                border-bottom: none;
+            }
+        }
+    }
+
+    img {
+        border-radius: 0.5rem;
+    }
+
+    .katex *:not(.delimsizing):not(.mathbb):not(.mathbf):not(.mathcal) {
+        font-family: CMU;
     }
 }
 
