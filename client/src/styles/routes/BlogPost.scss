@@ -138,9 +138,11 @@
 
         // Make the table horizontally scrollable on small screens
         @media (max-width: 600px) {
-            display: block;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+            &:has(thead th:nth-child(3)) {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
         }
 
         th, td {
@@ -169,10 +171,24 @@
 
     img {
         border-radius: 0.5rem;
+        width: 45vw;
+        max-width: 700px;
+
+        @include breakpoint(1000px) {
+            width: 100%;
+        }
     }
 
     .katex *:not(.delimsizing):not(.mathbb):not(.mathbf):not(.mathcal) {
         font-family: CMU;
+    }
+
+    .katex-html {
+        @include breakpoint(1000px) {
+            width: 100%;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
     }
 }
 

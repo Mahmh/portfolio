@@ -1,8 +1,8 @@
 ---
 title: How I Recreated “Attention Is All You Need” in PyTorch — and What My Evaluation Scores Look Like
 date: 2025-07-07
-tags: [AI, Transformer, Python]
-img: /img/blog/transformer-reimplementation.png
+tags: [NLP, Transformer]
+img: https://raw.githubusercontent.com/Mahmh/ml-research-papers/refs/heads/main/attention-is-all-you-need/thumbnail.svg
 excerpt: I re-implemented Vaswani et al.'s Transformer, trained on Multi30k & WMT19, and share full code + evaluation metrics.
 ---
 
@@ -158,10 +158,12 @@ Accordingly, I switched to the [WMT19 dataset](https://huggingface.co/datasets/w
 ![WMT19 loss curve](https://raw.githubusercontent.com/Mahmh/ml-research-papers/refs/heads/main/attention-is-all-you-need/graphs/wmt19_loss_curve.png)
 
 ### 5.1 Model Trained on Multi30k
+The first model contains roughly 14M parameters.
+
 Example translation:
 ```py
 >>> translate(model, 'I have some good news!', max_len=30, beam_width=4, len_penalty=0.9)
-OUTPUT: "##sg ##et , um es ent ##sp ##annt ist ent ##sp ##annt ."
+"##sg ##et , um es ent ##sp ##annt ist ent ##sp ##annt ."
 ```
 Evaluation metrics:
 | Metric         | Value   |
@@ -180,10 +182,12 @@ Evaluation metrics:
 | BERTScore F1   | 0.9637  |
 
 ### 5.2 Model Trained on WMT19
+This second model contains roughly 25M parameters since this model used a different tokenizer with a different vocabulary size than the first model.
+
 Example translation:
 ```py
 >>> translate(model, 'I have some good news!', max_len=30, beam_width=4, len_penalty=0.9)
-OUTPUT: "i některé dobré zprávy !"
+"i některé dobré zprávy !"
 ```
 Evaluation metrics:
 | Metric         | Value   |
