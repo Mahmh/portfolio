@@ -12,7 +12,7 @@ export const STATS = [
 export const PROJECTS = [
     {
         title: 'Shiftiatrics',
-        description: 'A smart shift scheduling engine for healthcare ERs, built as a B2B service for hospitals. Handles staggered rotations, fairness, and holidays.',
+        description: 'A smart shift scheduling engine for healthcare ERs that reduces scheduling time by 75% and serves hospitals through a B2B business model.',
         stack: ['Next.js', 'FastAPI', 'Java', 'PostgreSQL', 'SCSS', 'Docker', 'Hostinger VPS'],
         img: '/img/projects/shiftiatrics.webp',
         url: 'https://github.com/Mahmh/shiftiatrics'
