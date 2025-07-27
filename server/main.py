@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
-from lib.constants import VITE_BACKEND_SERVER_URL, WEB_SERVER_URL
+from lib.constants import BACKEND_SERVER_URL, WEB_SERVER_URL
 from lib.emails import send_contact_email
 from lib.models import BlogPost, ContactForm
 from lib.blog import list_blogs, get_blog
@@ -16,7 +16,7 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[VITE_BACKEND_SERVER_URL, WEB_SERVER_URL],
+    allow_origins=[BACKEND_SERVER_URL, WEB_SERVER_URL],
     allow_methods=['GET', 'POST'],
     allow_headers=['*'],
     allow_credentials=True

@@ -20,6 +20,8 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_DEPLOY_SSH_KEY }}
+          timeout: '60s'
+          command_timeout: '20m'
           script: |
             set -e
 
@@ -33,13 +35,14 @@ jobs:
             echo "🔐 Injecting .env..."
             echo "${{ secrets.ENV_FILE_CONTENT }}" | sed 's/\\n/\n/g' > .env
 
-            echo "🔧 Rebuilding client and server containers (compose.yml only)..."
-            docker compose -f compose.yml build client server
+            echo "🔧 Rebuilding containers (client, server, umami, db)..."
+            docker compose -f compose.yml build client server umami db
 
             echo "🧹 Removing existing containers if needed..."
-            docker compose -f compose.yml rm -sf client server
+            docker compose -f compose.yml rm -sf client server umami db
 
-            echo "🚀 Restarting client and server containers..."
-            docker compose -f compose.yml up -d client server
+            echo "🚀 Restarting containers..."
+            docker compose -f compose.yml up -d client server umami db
+            docker compose restart nginx
 
             echo "✅ Deployment complete!"

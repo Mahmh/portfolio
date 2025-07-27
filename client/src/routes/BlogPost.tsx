@@ -9,7 +9,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useLayoutEffect, useEffect } from 'react'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
-import { VITE_BACKEND_SERVER_URL } from '@const'
+import { BACKEND_SERVER_URL } from '@const'
 import type { BlogPost, ServerMsg } from '@types'
 import 'katex/dist/katex.min.css'
 
@@ -27,7 +27,7 @@ export default function BlogPost() {
                 loading.value = true
                 error.value = null
 
-                const res = await fetch(`${VITE_BACKEND_SERVER_URL}/blog/${slug}`)
+                const res = await fetch(`${BACKEND_SERVER_URL}/blog/${slug}`)
                 if (!res.ok) throw new Error('Failed to load post')
 
                 const data: BlogPost | ServerMsg = await res.json()
@@ -48,7 +48,7 @@ export default function BlogPost() {
 
     useLayoutEffect(() => {
         if (!post.value) return
-        document.title = `${post.value.title} | Maher Mahmoud` 
+        document.title = `${post.value.title} | Maher Mahmoud`
         const header = document.getElementById('header')
         const img = document.getElementById('post-img')
         if (header && img) {
@@ -60,7 +60,7 @@ export default function BlogPost() {
     if (loading.value) return (
         <section id='blog-post' style={{ alignItems: 'flex-start' }}>
             <div className='loading'>
-                <span className='spinner'/>
+                <span className='spinner' />
                 <p>Loading article...</p>
             </div>
         </section>
@@ -79,7 +79,7 @@ export default function BlogPost() {
 
     return (
         <div id='blog-post'>
-            <img src={post.value.img} alt={post.value.title} id='post-img'/>
+            <img src={post.value.img} alt={post.value.title} id='post-img' />
             <article id='post-container'>
                 <section id='title-and-date'>
                     <h1>{post.value.title}</h1>
@@ -93,7 +93,7 @@ export default function BlogPost() {
                     remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeHighlight, rehypeKatex]}
                     components={{
-                        a: ({node, ...props}) => <a {...props} target='_blank' rel='noopener noreferrer'/>         
+                        a: ({ node, ...props }) => <a {...props} target='_blank' rel='noopener noreferrer' />
                     }}
                 >
                     {post.value.content}

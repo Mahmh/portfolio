@@ -2,7 +2,7 @@ import '@styles/routes/Blog.scss'
 import { useEffect } from 'react'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
-import { VITE_BACKEND_SERVER_URL } from '@const'
+import { BACKEND_SERVER_URL } from '@const'
 import type { BlogPost } from '@types'
 import { Link } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ export default function Blog() {
     const fetchPosts = async () => {
         try {
             loading.value = true
-            const res = await fetch(`${VITE_BACKEND_SERVER_URL}/blog`)
+            const res = await fetch(`${BACKEND_SERVER_URL}/blog`)
 
             if (!res.ok) {
                 console.error(`[fetchPosts] Failed to fetch: ${res.status} ${res.statusText}`)
@@ -89,7 +89,7 @@ export default function Blog() {
                 ) : (
                     filtered.map((post, i) => (
                         <Link key={i} to={`/blog/${post.slug}`} className='blog-post'>
-                            <img src={post.img} alt={post.title} className='post-img'/>
+                            <img src={post.img} alt={post.title} className='post-img' />
                             <div className='post-content'>
                                 <h3 className='post-title'>{post.title}</h3>
                                 <p className='post-excerpt'>{post.excerpt}</p>

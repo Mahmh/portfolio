@@ -1,7 +1,7 @@
 import '@styles/routes/Contact.scss'
 import { useSignals } from '@preact/signals-react/runtime'
 import { signal } from '@preact/signals-react'
-import { CONTACT_EMAIL, VITE_BACKEND_SERVER_URL } from '@const'
+import { CONTACT_EMAIL, BACKEND_SERVER_URL } from '@const'
 import type { ServerMsg } from '@types'
 
 const feedback = signal<ServerMsg | null>(null)
@@ -20,13 +20,13 @@ export default function Contact() {
         feedback.value = null
 
         try {
-            const response = await fetch(`${VITE_BACKEND_SERVER_URL}/contact`, {
+            const response = await fetch(`${BACKEND_SERVER_URL}/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
             const result: ServerMsg = await response.json()
-        
+
             if (response.status === 429) {
                 feedback.value = {
                     detail: 'You have sent too many requests. Please try again later.',

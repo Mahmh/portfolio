@@ -1,7 +1,9 @@
 import { siReact, siNextdotjs, siVite, siFastapi, siOpenjdk, siTypescript, siMysql, siSqlite, siPostgresql, siPytorch, siDocker, siGit, siLinux, siGnubash, siPandas, siScikitlearn, siSass, siPython, siHuggingface, siTensorflow, siPlotly, siGithubactions, siPreact, siHostinger } from 'simple-icons'
 
-export const VITE_BACKEND_SERVER_URL = import.meta.env.VITE_BACKEND_SERVER_URL
-export const CONTACT_EMAIL = 'maher@mahermah.com'
+export const BACKEND_SERVER_URL = import.meta.env.VITE_BACKEND_SERVER_URL
+export const UMAMI_SCRIPT_URL = import.meta.env.VITE_UMAMI_SCRIPT_URL
+export const UMAMI_WEBSITE_ID = import.meta.env.VITE_UMAMI_WEBSITE_ID
+export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL
 
 export const STATS = [
     { label: 'Years of Experience', value: '5+' },
