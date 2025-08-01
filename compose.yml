@@ -26,7 +26,6 @@ services:
       - ./.env
     depends_on:
       - server
-    restart: always
 
   nginx:
     build:

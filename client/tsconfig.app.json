@@ -6,6 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "outDir": "dist",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -25,9 +26,9 @@
     "baseUrl": ".",
     "paths": {
       "@styles/*": ["src/styles/*"],
-      "@const": ["src/constants"],
-      "@certs": ["src/certificates"],
-      "@types": ["src/types"],
+      "@const": ["src/utils/constants"],
+      "@certs": ["src/utils/certificates"],
+      "@types": ["src/utils/types"],
     }
   },
   "include": ["src"]

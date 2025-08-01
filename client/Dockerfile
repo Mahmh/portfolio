@@ -1,7 +1,6 @@
-# Step 1: Build
+# 1. Builder: frontend + server
 FROM node:20 AS builder
 
-# Accept build-time environment variable from docker-compose
 ARG VITE_BACKEND_SERVER_URL
 ARG VITE_UMAMI_SCRIPT_URL
 ARG VITE_UMAMI_WEBSITE_ID
@@ -13,19 +12,26 @@ ENV VITE_UMAMI_WEBSITE_ID=$VITE_UMAMI_WEBSITE_ID
 ENV VITE_CONTACT_EMAIL=$VITE_CONTACT_EMAIL
 
 WORKDIR /app
+
+COPY package.json package-lock.json tsconfig.json ./
+RUN npm ci
+
 COPY . .
 
-RUN npm install
 RUN npm run build
+RUN npm run build:server
 
-# Step 2: Serve
+
+# 2. Runner: lean production
 FROM node:20-alpine AS runner
-
 WORKDIR /app
-RUN npm install -g serve
 
-# Copy build artifacts
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/dist-server ./dist-server
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
+
+RUN npm ci --omit=dev
 
 EXPOSE 80
-CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:5173"]
+CMD ["node", "dist-server/server.cjs"]
