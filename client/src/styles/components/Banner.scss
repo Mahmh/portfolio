@@ -79,12 +79,14 @@
         .profile-img {
             background-color: get-color('accent');
             flex: 1;
+            aspect-ratio: 568 / 500;
             min-width: 400px;
             max-height: 500px;
             object-fit: cover;
             display: flex;
             justify-content: center;
             border-radius: 20px;
+            overflow: hidden;
 
             @include breakpoint(650px) {
                 min-width: 50vw;

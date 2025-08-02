@@ -22,37 +22,36 @@ $colors: (
 }
 
 @font-face {
-    font-family: Inter;
-    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: Inter;
-    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: italic;
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: CMU;
-    src: url('/fonts/cmunrm.ttf') format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
+  font-family: 'CMU';
+  src: url('/fonts/cmunrm.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: CMU;
-    src: url('/fonts/cmunti.ttf') format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: italic;
+  font-family: 'CMU';
+  src: url('/fonts/cmunti.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
 }
-
 
 * {
     font-family: Inter;
