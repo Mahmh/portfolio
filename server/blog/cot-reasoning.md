@@ -1,9 +1,9 @@
 ---
 title: Unlocking the Power of Chain‑of‑Thought Reasoning
 date: 2025-07-24
-tags: [NLP, LLM, Prompting, Reasoning]  
+tags: [NLP, LLM, Prompting, Reasoning]
 img: https://raw.githubusercontent.com/Mahmh/ml-research-papers/refs/heads/main/cot-reasoning/thumbnail.png
-excerpt: How "Let's think step by step" helps language models solve multi‑step problems—real examples and simple tips.
+excerpt: How "Let's think step by step" helps language models solve multi‑step problems. Real examples and simple tips.
 ---
 
 ## 1. Introduction

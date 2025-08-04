@@ -16,6 +16,9 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile.dev
+      args:
+        VITE_BACKEND_SERVER_URL: ${VITE_BACKEND_SERVER_URL}
+        VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
     container_name: client_dev
     ports:
       - "5173:5173"
