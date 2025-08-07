@@ -29,6 +29,7 @@
       "@const": ["src/utils/constants"],
       "@certs": ["src/utils/certificates"],
       "@types": ["src/utils/types"],
+      "@context": ["src/context.tsx"]
     }
   },
   "include": ["src"]

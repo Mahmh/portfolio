@@ -1,9 +1,10 @@
-import "@styles/components/Header.scss";
+import "@styles/routes/blog/Header.scss";
 import { signal } from "@preact/signals-react";
 import { useSignals } from "@preact/signals-react/runtime";
 import { Link, NavLink } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useEffect, useRef } from "react";
+import { isBlogHost } from "@context";
 
 const menuOpen = signal(false);
 const isDesktop = signal(window.innerWidth > 968);
@@ -13,7 +14,6 @@ export default function Header() {
   useSignals();
   const backdropRef = useRef<HTMLDivElement>(null);
 
-  // Track screen size
   useEffect(() => {
     const handleResize = () => {
       isDesktop.value = window.innerWidth > 968;
@@ -22,7 +22,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Adjust backdrop on menu open
   useEffect(() => {
     const header = document.getElementById("header");
     if (header && backdropRef.current) {
@@ -31,47 +30,16 @@ export default function Header() {
     }
   }, [menuOpen.value]);
 
-  const navLinks = (
-    <>
-      <NavLink
-        to="/about"
-        onClick={closeMenu}
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        About
-      </NavLink>
-      <NavLink
-        to="/certificates"
-        onClick={closeMenu}
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        Certificates
-      </NavLink>
-      <NavLink
-        to="/projects"
-        onClick={closeMenu}
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        Projects
-      </NavLink>
-      <NavLink
-        to="/contact"
-        onClick={closeMenu}
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        Contact
-      </NavLink>
-      <a href="/blog" onClick={closeMenu}>
-        Blog
-      </a>
-    </>
-  );
-
   return (
     <>
-      <header id="header">
-        <NavLink to="/" onClick={closeMenu} className="logo">
+      <header id="blog-header">
+        <NavLink
+          to={isBlogHost.value ? "/" : "/blog"}
+          onClick={closeMenu}
+          className="logo"
+        >
           Maher Mahmoud
+          <span> Blog</span>
         </NavLink>
 
         {!isDesktop.value && (
@@ -84,12 +52,17 @@ export default function Header() {
         )}
 
         {isDesktop.value && (
-          <>
-            <nav className="nav-links desktop-nav">{navLinks}</nav>
+          <div id="desktop-links">
+            <Link
+              to={isBlogHost.value ? "https://mahermah.com/" : "/"}
+              className="main-website-button"
+            >
+              Main Website
+            </Link>
             <Link to="/contact" className="header-cta-button desktop-cta">
               Book a Call
             </Link>
-          </>
+          </div>
         )}
       </header>
 
@@ -100,8 +73,14 @@ export default function Header() {
             className={`menu-backdrop ${menuOpen.value ? "visible" : ""}`}
             onClick={closeMenu}
           />
-          <nav className={`nav-links ${menuOpen.value ? "open" : ""}`}>
-            {navLinks}
+          <nav className={`blog-nav-links ${menuOpen.value ? "open" : ""}`}>
+            <Link
+              to={isBlogHost.value ? "https://mahermah.com/" : "/"}
+              onClick={closeMenu}
+              className="main-website-button mobile-cta"
+            >
+              Main Website
+            </Link>
             <Link
               to="/contact"
               onClick={closeMenu}

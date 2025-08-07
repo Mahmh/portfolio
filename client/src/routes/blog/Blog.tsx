@@ -1,10 +1,11 @@
-import "@styles/routes/Blog.scss";
+import "@styles/routes/blog/Blog.scss";
 import { useEffect } from "react";
 import { useSignals } from "@preact/signals-react/runtime";
 import { signal } from "@preact/signals-react";
+import { Link } from "react-router-dom";
 import { BACKEND_SERVER_URL } from "@const";
 import type { BlogPost } from "@types";
-import { Link } from "react-router-dom";
+import { isBlogHost } from "@context";
 
 const loading = signal(true);
 const search = signal("");
@@ -101,7 +102,11 @@ export default function Blog() {
             </div>
           ) : (
             filtered.map((post, i) => (
-              <Link key={i} to={`/blog/${post.slug}`} className="blog-post">
+              <Link
+                key={i}
+                to={isBlogHost.value ? `/${post.slug}` : `/blog/${post.slug}`}
+                className="blog-post"
+              >
                 <img src={post.img} alt={post.title} className="post-img" />
                 <div className="post-content">
                   <h3 className="post-title">{post.title}</h3>

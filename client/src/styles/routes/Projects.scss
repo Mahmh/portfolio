@@ -1,96 +1,96 @@
-@use '@styles/globals' as *;
+@use "@styles/globals" as *;
 
 #projects {
-    @extend %project-section;
-    padding-top: 2rem;
-    padding-left: 10vw;
-    padding-right: 10vw;
+  @extend %project-section;
+  padding-top: 2rem;
+  padding-left: 10vw;
+  padding-right: 10vw;
 
-    @include breakpoint(550px) {
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
+  @include breakpoint(550px) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
 }
 
 %project-section {
-    background-color: get-color('background');
-    color: get-color('text');
+  background-color: get-color("background");
+  color: get-color("text");
 
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-        color: get-color('accent');
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: get-color("accent");
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    @include breakpoint(550px) {
+      grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
     }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 3rem;
-        max-width: 1600px;
-        margin: 0 auto;
-
-        @include breakpoint(550px) {
-            grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
-        }
-    }
+  }
 }
 
 .project-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #161616;
-    border: 1px solid get-color('alpha-white');
-    border-radius: 1rem;
-    overflow: hidden;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  background-color: #161616;
+  border: 1px solid get-color("alpha-white");
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
-    &:hover {
-        transform: translateY(-6px);
-        border-color: get-color('accent');
+  &:hover {
+    transform: translateY(-6px);
+    border-color: get-color("accent");
+  }
+
+  .project-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-bottom: 1px solid get-color("alpha-white");
+  }
+
+  .project-content {
+    padding: 2rem;
+    padding-top: 1rem;
+
+    .project-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: get-color("text");
     }
 
-    .project-image {
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-        border-bottom: 1px solid get-color('alpha-white');
+    .project-description {
+      font-size: 1.1rem;
+      color: get-color("secondary");
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
 
-    .project-content {
-        padding: 2rem;
-        padding-top: 1rem;
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
 
-        .project-title {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: get-color('text');
-        }
-
-        .project-description {
-            font-size: 1.1rem;
-            color: get-color('secondary');
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-
-            .tech {
-                background-color: rgba(255, 255, 255, 0.08);
-                padding: 0.4rem 0.75rem;
-                border-radius: 0.3rem;
-                font-size: 0.9rem;
-                color: get-color('text');
-                white-space: nowrap;
-            }
-        }
+      .tech {
+        background-color: rgba(255, 255, 255, 0.08);
+        padding: 0.4rem 0.75rem;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
+        color: get-color("text");
+        white-space: nowrap;
+      }
     }
+  }
 }

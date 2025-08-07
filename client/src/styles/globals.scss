@@ -1,73 +1,75 @@
-@use 'sass:map';
+@use "sass:map";
 
 $colors: (
-    'background': #0F0F0F,
-    'secondary-background': #121212,
-    'text': #EDEDED,
-    'accent': #35C2C1,
-    'accent-hover': #2BA9A9,
-    'secondary': #B0B0B0,
-    'gold-accent': #C29D5C,
-    'prestige-purple': #501C77,
-    'alpha-white': rgba(255, 255, 255, 0.06),
-    'translucent-white': rgba(255, 255, 255, 0.15)
+  "background": #0f0f0f,
+  "secondary-background": #121212,
+  "text": #ededed,
+  "accent": #35c2c1,
+  "accent-hover": #2ba9a9,
+  "secondary": #b0b0b0,
+  "gold-accent": #c29d5c,
+  "prestige-purple": #501c77,
+  "alpha-white": rgba(255, 255, 255, 0.06),
+  "translucent-white": rgba(255, 255, 255, 0.15),
 );
 
 @function get-color($color) {
-    @return map.get($colors, $color);
+  @return map.get($colors, $color);
 }
 
 @mixin breakpoint($max-width) {
-    @media (max-width: $max-width) { @content };
+  @media (max-width: $max-width) {
+    @content;
+  }
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("/fonts/Inter-Italic-VariableFont_opsz,wght.woff2") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CMU';
-  src: url('/fonts/cmunrm.woff2') format('woff2');
+  font-family: "CMU";
+  src: url("/fonts/cmunrm.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CMU';
-  src: url('/fonts/cmunti.woff2') format('woff2');
+  font-family: "CMU";
+  src: url("/fonts/cmunti.woff2") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 * {
-    font-family: Inter;
+  font-family: Inter;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-size: 1.2rem;
-    margin: 0;
-    overflow-x: hidden;
+  font-size: 1.2rem;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 section {
-    padding: 6rem 2rem;
-    padding-top: 3rem;
+  padding: 6rem 2rem;
+  padding-top: 3rem;
 }

@@ -1,66 +1,66 @@
-@use 'sass:color';
+@use "sass:color";
 
 #about {
-    background: get-color('background');
-    padding: 5rem 6rem;
-    padding-top: 2rem;
-    min-height: 80vh;
+  background: get-color("background");
+  padding: 5rem 6rem;
+  padding-top: 2rem;
+  min-height: 80vh;
 
-    @include breakpoint(700px) {
-        padding-left: 3rem;
-        padding-right: 3rem;
+  @include breakpoint(700px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: get-color("accent");
+    margin-bottom: 3rem;
+  }
+
+  .about-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include breakpoint(1100px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
+  }
 
-    .section-title {
-        font-size: 2.4rem;
-        font-weight: 700;
-        text-align: center;
-        color: get-color('accent');
-        margin-bottom: 3rem;
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: get-color("secondary");
+    font-size: 1.1rem;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    p {
+      text-align: left;
+      margin: 0;
     }
+  }
 
-    .about-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
+  .profile-img {
+    border-radius: 20px;
+    max-height: 500px;
+    object-fit: cover;
+    min-width: 400px;
+    min-height: 400px;
 
-        @include breakpoint(1100px) {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+    @include breakpoint(500px) {
+      min-width: 80vw;
+      min-height: 40vh;
     }
-
-    .about-content {
-        max-width: 800px;
-        margin: 0 auto;
-        color: get-color('secondary');
-        font-size: 1.1rem;
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem;
-
-        p {
-            text-align: left;
-            margin: 0;
-        }
-    }
-
-    .profile-img {
-        border-radius: 20px;
-        max-height: 500px;
-        object-fit: cover;
-        min-width: 400px;
-        min-height: 400px;
-
-        @include breakpoint(500px) {
-            min-width: 80vw;
-            min-height: 40vh;
-        }
-    }
+  }
 }

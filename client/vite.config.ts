@@ -9,7 +9,8 @@ export default defineConfig({
             '@styles': path.resolve(__dirname, 'src/styles'),
             '@const': path.resolve(__dirname, 'src/utils/constants'),
             '@certs': path.resolve(__dirname, 'src/utils/certificates'),
-            '@types': path.resolve(__dirname, 'src/utils/types')
+            '@types': path.resolve(__dirname, 'src/utils/types'),
+            '@context': path.resolve(__dirname, 'src/context')
         }
     },
     css: {

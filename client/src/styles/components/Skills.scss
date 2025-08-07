@@ -1,69 +1,69 @@
 #skills {
-    background-color: get-color('background');
-    border-top: 1px solid get-color('alpha-white');
-    color: get-color('text');
+  background-color: get-color("background");
+  border-top: 1px solid get-color("alpha-white");
+  color: get-color("text");
 
-    .section-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-        color: get-color('accent');
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: get-color("accent");
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .skill-category {
+    background-color: #151515;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid get-color("alpha-white");
+
+    .category-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: get-color("text");
     }
 
-    .skill-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 2.5rem;
-        max-width: 1500px;
-        margin: 0 auto;
-    }
+    .tool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-left: 0;
 
-    .skill-category {
-        background-color: #151515;
-        padding: 2rem;
-        border-radius: 0.75rem;
-        border: 1px solid get-color('alpha-white');
+      .tool {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.75rem 1rem;
+        background-color: #1b1b1b;
+        border: 1px solid get-color("alpha-white");
+        border-radius: 0.5rem;
+        transition: background-color 0.2s ease;
 
-        .category-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            color: get-color('text');
+        &:hover {
+          background-color: #232323;
         }
 
-        .tool-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            padding-left: 0;
-
-            .tool {
-                display: flex;
-                align-items: center;
-                gap: 0.8rem;
-                padding: 0.75rem 1rem;
-                background-color: #1b1b1b;
-                border: 1px solid get-color('alpha-white');
-                border-radius: 0.5rem;
-                transition: background-color 0.2s ease;
-
-                &:hover {
-                    background-color: #232323;
-                }
-
-                .tool-icon {
-                    width: 22px;
-                    height: 22px;
-                    flex-shrink: 0;
-                }
-
-                .tool-name {
-                    font-size: 0.95rem;
-                    font-weight: 500;
-                    color: get-color('text');
-                }
-            }
+        .tool-icon {
+          width: 22px;
+          height: 22px;
+          flex-shrink: 0;
         }
+
+        .tool-name {
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: get-color("text");
+        }
+      }
     }
+  }
 }

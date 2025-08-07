@@ -1,4 +1,4 @@
-#header {
+#blog-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,6 +22,15 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+
+    span {
+      color: white !important;
+      background-color: transparent !important;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      background-clip: initial;
+      font-weight: normal;
+    }
   }
 
   .menu-toggle {
@@ -38,59 +47,30 @@
   }
 }
 
-.header-cta-button {
-  position: relative;
-  overflow: hidden;
+#desktop-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-website-button {
+  background: none;
+  display: inline-block;
   padding: 0.5rem 1.25rem;
   font-weight: 600;
   color: get-color("text");
-  border: none;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(
-    270deg,
-    get-color("accent"),
-    get-color("accent-hover"),
-    get-color("prestige-purple"),
-    get-color("accent-hover"),
-    get-color("accent")
-  );
-  background-size: 600% 100%;
-  background-position: 100% 50%;
-  border-radius: 0.375rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
   text-decoration: none;
-  animation: gradientScroll 8s linear infinite;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  @keyframes gradientScroll {
-    0% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  border: none;
+  transition: background-color 0.2s ease;
 
   &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.15);
   }
 
   &.mobile-cta {
     display: none;
     color: get-color("text");
-    background: linear-gradient(
-      270deg,
-      get-color("accent"),
-      get-color("accent-hover"),
-      get-color("prestige-purple"),
-      get-color("accent-hover"),
-      get-color("accent")
-    );
     background-size: 600% 100%;
     background-position: 100% 50%;
     text-align: center;
@@ -110,60 +90,11 @@
   }
 }
 
-.menu-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 900;
-
-  &.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-.nav-links {
+.blog-nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   flex: 1;
-
-  a {
-    position: relative;
-    color: get-color("secondary");
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-
-    &.active {
-      color: get-color("accent");
-    }
-    &:hover {
-      color: get-color("text");
-    }
-    &.active::after,
-    &:hover::after {
-      width: 100%;
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background-color: get-color("accent");
-      transition: width 0.25s ease-in-out;
-    }
-  }
 
   @include breakpoint(968px) {
     position: fixed;

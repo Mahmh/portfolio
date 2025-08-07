@@ -1,47 +1,47 @@
 #services {
-    background-color: #101010;
-    border-top: 1px solid get-color('alpha-white');
-    color: get-color('text');
+  background-color: #101010;
+  border-top: 1px solid get-color("alpha-white");
+  color: get-color("text");
 
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-        color: get-color('accent');
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: get-color("accent");
+  }
+
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background-color: #151515;
+    padding: 2rem;
+    padding-top: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid get-color("alpha-white");
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: get-color("accent");
     }
 
-    .service-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-        max-width: 1500px;
-        margin: 0 auto;
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: get-color("text");
     }
 
-    .service-card {
-        background-color: #151515;
-        padding: 2rem;
-        padding-top: 1rem;
-        border-radius: 0.75rem;
-        border: 1px solid get-color('alpha-white');
-        transition: all 0.2s ease;
-
-        &:hover {
-            border-color: get-color('accent');
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: get-color('text');
-        }
-
-        .service-description {
-            font-size: 1rem;
-            color: get-color('secondary');
-            line-height: 1.6;
-        }
+    .service-description {
+      font-size: 1rem;
+      color: get-color("secondary");
+      line-height: 1.6;
     }
+  }
 }

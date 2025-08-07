@@ -1,155 +1,157 @@
 #contact {
-    background-color: get-color('background');
-    padding: 4rem 7rem 5rem;
-    min-height: 80vh;
+  background-color: get-color("background");
+  padding: 4rem 7rem 5rem;
+  min-height: 80vh;
 
-    .section-title {
-        text-align: center;
-        font-size: 2.6rem;
-        font-weight: 700;
-        color: get-color('accent');
-        margin-bottom: 3.5rem;
+  .section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: get-color("accent");
+    margin-bottom: 3.5rem;
 
-        @include breakpoint(1000px) {
-            margin-top: 0;
-        }
+    @include breakpoint(1000px) {
+      margin-top: 0;
+    }
+  }
+
+  .contact-wrapper {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    input,
+    textarea {
+      padding: 1rem 1.25rem;
+      border: 1px solid get-color("secondary");
+      background-color: rgba(255, 255, 255, 0.03);
+      color: get-color("text");
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      resize: none;
+      transition: border-color 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: get-color("accent");
+      }
     }
 
-    .contact-wrapper {
-        display: flex;
-        gap: 4rem;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
+    button {
+      align-self: flex-start;
+      padding: 0.9rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: get-color("text");
+      background-color: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+      cursor: pointer;
+
+      @include breakpoint(650px) {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: #2a2a2a;
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 0 1px #35c2c1, 0 6px 18px rgba(53, 194, 193, 0.15);
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background-color: #1a1a1a;
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  }
+
+  .contact-info {
+    flex: 1;
+    min-width: 450px;
+    font-size: 1.05rem;
+    color: get-color("text");
+    background: linear-gradient(
+      135deg,
+      rgba(get-color("accent"), 0.1),
+      rgba(get-color("prestige-purple"), 0.08)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 2rem 2rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @include breakpoint(650px) {
+      min-width: 60vw;
     }
 
-    .contact-form {
-        flex: 1;
-        min-width: 350px;
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-
-        input,
-        textarea {
-            padding: 1rem 1.25rem;
-            border: 1px solid get-color('secondary');
-            background-color: rgba(255, 255, 255, 0.03);
-            color: get-color('text');
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            resize: none;
-            transition: border-color 0.2s;
-
-            &:focus {
-                outline: none;
-                border-color: get-color('accent');
-            }
-        }
-
-        button {
-            align-self: flex-start;
-            padding: 0.9rem 1.6rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: get-color('text');
-            background-color: #1A1A1A;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0.375rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(2px);
-            cursor: pointer;
-
-            @include breakpoint(650px) {
-                width: 100%;
-            }
-
-            &:hover {
-                background-color: #2A2A2A;
-                border-color: rgba(255, 255, 255, 0.3);
-                box-shadow: 0 0 0 1px #35C2C1, 0 6px 18px rgba(53, 194, 193, 0.15);
-                transform: translateY(-1px);
-            }
-
-            &:active {
-                transform: translateY(0);
-                box-shadow: none;
-            }
-
-            &:disabled {
-                opacity: 0.6;
-                cursor: not-allowed;
-                background-color: #1A1A1A;
-                border-color: rgba(255, 255, 255, 0.15);
-                box-shadow: none;
-                transform: none;
-            }
-        }
+    p {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
     }
 
-    .contact-info {
-        flex: 1;
-        min-width: 450px;
-        font-size: 1.05rem;
-        color: get-color('text');
-        background: linear-gradient(135deg, rgba(get-color('accent'), 0.1), rgba(get-color('prestige-purple'), 0.08));
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 0.75rem;
-        padding: 2rem 2rem;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(4px);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    a {
+      color: get-color("accent");
+      text-decoration: none;
+      font-weight: 500;
 
-        @include breakpoint(650px) {
-            min-width: 60vw;
-        }
-
-        p {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        a {
-            color: get-color('accent');
-            text-decoration: none;
-            font-weight: 500;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            margin-top: 1.5rem;
-        }
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    .form-feedback {
-        margin-top: 0.75rem;
-        font-weight: 500;
-        font-size: 0.95rem;
-        padding: 0.6rem 1rem;
-        border-radius: 0.375rem;
-        backdrop-filter: blur(4px);
-
-        &.success {
-            color: #00e6b7;
-            background-color: rgba(0, 230, 183, 0.08);
-            border: 1px solid rgba(0, 230, 183, 0.2);
-        }
-
-        &.error {
-            color: #ff6b6b;
-            background-color: rgba(255, 107, 107, 0.08);
-            border: 1px solid rgba(255, 107, 107, 0.2);
-        }
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
     }
+  }
+
+  .form-feedback {
+    margin-top: 0.75rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.375rem;
+    backdrop-filter: blur(4px);
+
+    &.success {
+      color: #00e6b7;
+      background-color: rgba(0, 230, 183, 0.08);
+      border: 1px solid rgba(0, 230, 183, 0.2);
+    }
+
+    &.error {
+      color: #ff6b6b;
+      background-color: rgba(255, 107, 107, 0.08);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+    }
+  }
 }
-
-

@@ -6,6 +6,7 @@ _path_to = lambda x: os.path.join(_CURRENT_DIR, x)
 # Net
 BACKEND_SERVER_URL = os.getenv('VITE_BACKEND_SERVER_URL')
 WEB_SERVER_URL = os.getenv('WEB_SERVER_URL')
+BLOG_URL = 'https://blog.mahermah.com'
 
 # Emails
 MAIL_USERNAME = os.getenv('MAIL_USERNAME')
