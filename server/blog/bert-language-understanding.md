@@ -1,7 +1,7 @@
 ---
 title: BERT vs. BiLSTM vs. Logistic Regression on IMDb Sentiment Analysis  
 date: 2025-07-19
-tags: [NLP, Transformer, Sentiment Analysis] 
+tags: [NLP, Transformer, Fine-Tuning] 
 img: https://raw.githubusercontent.com/Mahmh/ml-research-papers/refs/heads/main/bert/thumbnail.svg
 excerpt: A head-to-head comparison of BERT, BiLSTM, and Logistic Regression on the Stanford IMDb movie review dataset—code, configs, and evaluation metrics.  
 ---
