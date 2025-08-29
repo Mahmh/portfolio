@@ -26,9 +26,13 @@ import {
 } from "simple-icons";
 
 export const BACKEND_SERVER_URL = import.meta.env.VITE_BACKEND_SERVER_URL;
-export const UMAMI_SCRIPT_URL = import.meta.env.VITE_UMAMI_SCRIPT_URL;
-export const UMAMI_WEBSITE_ID = import.meta.env.VITE_UMAMI_WEBSITE_ID;
 export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL;
+
+export namespace Umami {
+  export const SCRIPT_URL = import.meta.env.VITE_UMAMI_SCRIPT_URL;
+  export const PORTFOLIO_WEBSITE_ID = import.meta.env.VITE_PORTFOLIO_UMAMI_WEBSITE_ID;
+  export const BLOG_WEBSITE_ID = import.meta.env.VITE_BLOG_UMAMI_WEBSITE_ID;
+}
 
 export const STATS = [
   { label: "Years of Experience", value: "5+" },

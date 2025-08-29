@@ -104,7 +104,10 @@ For example, you can have 3 LoRA adapters and 1 base model, and you can combine 
 
 ![Training & Validation Loss Curve](/img/blog-assets/lora-adapters.svg)
 
-## 7. Next Steps
+## 7. How to Reproduce
+Full setup & training code in [this repository](https://github.com/Mahmh/ml-research-papers/tree/main/lora). 
+
+## 8. Next Steps
 I plan to:
 * Try **QLoRA** for lower memory usage.
 * Test on other instruction datasets.

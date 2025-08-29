@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_DEPLOY_SSH_KEY }}
           timeout: '60s'
-          command_timeout: '60m'
+          command_timeout: '50m'
           script: |
             set -e
 
