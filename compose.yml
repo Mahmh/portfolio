@@ -4,8 +4,8 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: server_c
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     env_file:
       - ./.env
     restart: always
@@ -21,8 +21,8 @@ services:
         VITE_BLOG_UMAMI_WEBSITE_ID: ${VITE_BLOG_UMAMI_WEBSITE_ID}
         VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
     container_name: client_c
-    ports:
-      - "5173:5173"
+    expose:
+      - "5173"
     env_file:
       - ./.env
     depends_on:
@@ -68,11 +68,11 @@ services:
       APP_SECRET: ${UMAMI_APP_SECRET}
     depends_on:
       - db
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "curl https://mahermah.com:3000/api/heartbeat"]
+      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/api/heartbeat || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 5
