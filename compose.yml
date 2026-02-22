@@ -4,8 +4,8 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: server_c
-    expose:
-      - "8000"
+    ports:
+      - "127.0.0.1:8000:8000"
     env_file:
       - ./.env
     restart: always
@@ -21,26 +21,11 @@ services:
         VITE_BLOG_UMAMI_WEBSITE_ID: ${VITE_BLOG_UMAMI_WEBSITE_ID}
         VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
     container_name: client_c
-    expose:
-      - "5173"
+    ports:
+      - "127.0.0.1:5173:5173"
     env_file:
       - ./.env
     depends_on:
-      - server
-
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    container_name: nginx_c
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-    depends_on:
-      - client
       - server
   
   db:
@@ -68,8 +53,8 @@ services:
       APP_SECRET: ${UMAMI_APP_SECRET}
     depends_on:
       - db
-    expose:
-      - "3000"
+    ports:
+      - "127.0.0.1:3000:3000"
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=64m
     security_opt:

@@ -43,6 +43,6 @@ jobs:
 
             echo "🚀 Restarting containers..."
             docker compose -f compose.yml up -d client server umami db
-            docker compose restart nginx
+            sudo nginx -t && sudo systemctl reload nginx
 
             echo "✅ Deployment complete!"
