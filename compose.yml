@@ -1,9 +1,11 @@
+name: mahermah
+
 services:
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: server_c
+    container_name: mahermah-server-c
     ports:
       - "127.0.0.1:8000:8000"
     env_file:
@@ -20,7 +22,7 @@ services:
         VITE_PORTFOLIO_UMAMI_WEBSITE_ID: ${VITE_PORTFOLIO_UMAMI_WEBSITE_ID}
         VITE_BLOG_UMAMI_WEBSITE_ID: ${VITE_BLOG_UMAMI_WEBSITE_ID}
         VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
-    container_name: client_c
+    container_name: mahermah-client-c
     ports:
       - "127.0.0.1:5173:5173"
     env_file:
@@ -30,7 +32,7 @@ services:
   
   db:
     image: postgres:latest
-    container_name: db_c
+    container_name: mahermah-db-c
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -46,7 +48,7 @@ services:
   
   umami:
     image: ghcr.io/umami-software/umami:3.0.3
-    container_name: umami_c
+    container_name: mahermah-umami-c
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       DATABASE_TYPE: postgresql
