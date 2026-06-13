@@ -9,6 +9,7 @@ import Projects from "./routes/Projects";
 import Certificates from "./routes/Certificates";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
+import PrivacyPolicy from "./routes/PrivacyPolicy";
 import Layout from "./Layout";
 import NotFound from "./routes/NotFound";
 import BlogLayout from "./routes/blog/Layout";
@@ -36,6 +37,7 @@ const PortfolioPage = () => {
         <Route path="projects" element={<Projects />} />
         <Route path="certificates" element={<Certificates />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/blog" element={<BlogLayout />}>

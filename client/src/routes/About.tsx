@@ -15,7 +15,7 @@ export default function About() {
               largely self-driven, built through <b>rigorous self-study</b> and{" "}
               <b>reputable online platforms</b>. Starting with Python, I later
               branched into web development, databases, cybersecurity,
-              blockchain, and AI — giving me a broad, interconnected view of the
+              blockchain, and AI, giving me a broad, interconnected view of the
               field.
             </p>
 
@@ -26,7 +26,7 @@ export default function About() {
                 hospital-grade shift schedulers and NLP tools
               </b>
               . I’m particularly drawn to challenges at the intersection of ML
-              and product design — where user experience meets algorithmic
+              and product design, where user experience meets algorithmic
               complexity.
             </p>
 
@@ -40,7 +40,7 @@ export default function About() {
 
             <p>
               Beyond the screen, I’ve joined national AI programs like the Qatar
-              Innovation Program — where my team earned 1st place — and
+              Innovation Program, where my team earned 1st place, and
               participated in school STEM clubs for robotics, drones, and
               electric vehicles. These experiences not only sharpened my skills
               but also <b>helped grow my network</b> and{" "}
@@ -49,7 +49,7 @@ export default function About() {
 
             <p>
               Whether you're a startup founder, recruiter, client, or fellow
-              builder — I'm always open to collaborating on bold ideas that
+              builder, I'm always open to collaborating on bold ideas that
               deserve to exist.
             </p>
           </div>

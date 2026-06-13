@@ -1,5 +1,6 @@
 import '@styles/components/Footer.scss'
 import { CONTACT_EMAIL } from '@const'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
     return (
@@ -10,6 +11,7 @@ export default function Footer() {
                 <div className='footer-links'>
                     <a href='https://github.com/Mahmh' target='_blank' rel='noopener noreferrer'>GitHub</a>
                     <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
+                    <Link to='/privacy-policy'>Privacy Policy</Link>
                 </div>
             </div>
         </footer>

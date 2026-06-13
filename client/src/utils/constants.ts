@@ -99,7 +99,7 @@ export const PROJECTS = [
   {
     title: "Semantic Course Search",
     description:
-      "A smarter search engine for 100+ tech courses that understands meaning — not just keywords.",
+      "A smarter search engine for 100+ tech courses that understands meaning, not just keywords.",
     stack: ["Vite", "FastAPI", "SQLite", "SCSS", "Docker", "ChromaDB"],
     img: "/img/projects/semantic-course-search.webp",
     url: "https://github.com/Mahmh/CourseSeek",
@@ -139,7 +139,7 @@ export const SERVICES = [
   {
     title: "AI Integration",
     description:
-      "I add AI to products — from smart search to recommendations — using open-source models and APIs.",
+      "I add AI to products, from smart search to recommendations, using open-source models and APIs.",
   },
   {
     title: "Lean MVP Development",
