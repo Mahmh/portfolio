@@ -42,6 +42,22 @@ export const STATS = [
 
 export const PROJECTS = [
   {
+    title: "Workbox",
+    description:
+      "A web app that reduces the time students spend bouncing between search tabs, filtering out low-quality results, and organizing useful worksheets, notes, webpages, images, and videos.",
+    stack: [
+      "Next.js",
+      "FastAPI",
+      "Supabase",
+      "Tailwind CSS",
+      "Gemini API",
+      "Docker",
+      "Hostinger VPS",
+    ],
+    img: "/img/projects/workbox.webp",
+    url: "https://workbox.mahermah.com",
+  },
+  {
     title: "Shiftiatrics",
     description:
       "A smart shift scheduling engine for healthcare ERs that reduces scheduling time by 75% and serves hospitals through a B2B business model.",
@@ -64,6 +80,21 @@ export const PROJECTS = [
     stack: ["Next.js", "FastAPI", "MySQL", "SCSS", "Docker", "Ollama"],
     img: "/img/projects/ai-ecom-app.webp",
     url: "https://github.com/Mahmh/ai_ecom_app",
+  },
+  {
+    title: "Dr. Mazen's Website",
+    description:
+      "A website that I made for my father, who is a pediatrician, to display his services, certificates, and details about his clinic. It lets patients register an appointment or have a phone call with the clinic.",
+    stack: [
+      "Next.js",
+      "Next.js API Routes",
+      "SCSS",
+      "Umami Analytics",
+      "Docker",
+      "Hostinger VPS",
+    ],
+    img: "/img/projects/drmazen.webp",
+    url: "https://drmazenmahmoud.com/en",
   },
   {
     title: "Semantic Course Search",
